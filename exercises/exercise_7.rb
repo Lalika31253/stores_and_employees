@@ -10,3 +10,18 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+
+  #Ask the user for a store name (store it in a variable)
+  puts "Enter the store name: "
+  store_name = gets.chomp
+
+
+  #Attempt to create a store with the inputted name but leave out the other fields
+  store = Store.create(name: store_name)
+  if store.valid?
+    puts "Store #{store_name} created."
+  else
+    puts "Error creating the store: #{store.errors.full_messages}!"
+end
+
+
